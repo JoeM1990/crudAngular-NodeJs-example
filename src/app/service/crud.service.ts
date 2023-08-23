@@ -49,6 +49,12 @@ export class CrudService {
 
   }
 
+  getDataById(id:any):Observable<any>{
+
+    return this.client.get(this.baseUrl+'livre/'+id);
+  }
+
+
 
 
 }

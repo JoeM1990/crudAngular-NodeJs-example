@@ -1,0 +1,126 @@
+<h1>APP GESTION LIVRE</h1>
+
+<div class="card">
+  <!-- <h5 class="card-header">Table Basic</h5> -->
+
+ 
+  
+  <div class="table-responsive text-nowrap">
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#basicModal">+</button>
+
+    <table class="table">
+      <thead>
+        <tr>
+       
+          <th>Id</th>
+          <th>Titre</th>
+          <th>Auteur</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table-border-bottom-0">
+        <tr *ngFor="let livres of livre; let i = index " >
+                <td>{{livres.id}}</td>
+                <td>{{livres.titre}}</td>
+                <td>{{livres.auteur}}</td>
+               
+                
+                <td>
+                    <i class='bx bx-search-alt-2' data-bs-toggle="modal" data-bs-target="#updateModal" (click)="getLivreById(livres.id)">Update</i>
+                    <i class='bx bxs-trash primary' (click)="deleteLivreById(livres.id)">Delete</i>
+                </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Informations</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form [formGroup]="livreForm">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col mb-3">
+            <label for="nameBasic" class="form-label">Titre</label>
+            <input type="text" id="nameBasic" class="form-control" placeholder="Titre" formControlName="titre"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="nameBasic" class="form-label">Auteur</label>
+            <input type="text" id="nameBasic" class="form-control" placeholder="Auteur" formControlName="autre"/>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addLivre()">Ajouter</button>
+      </div>
+    </form>
+      
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal update-->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Informations</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form [formGroup]="livreUpdateForm">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col mb-3">
+            <label for="nameBasic" class="form-label">Titre</label>
+            <input type="text" id="nameBasic" class="form-control" placeholder="Titre" formControlName="titre"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="nameBasic" class="form-label">Auteur</label>
+            <input type="text" id="nameBasic" class="form-control" placeholder="Auteur" formControlName="auteur"/>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateLivreById(idUpdate)">Modifier</button>
+      </div>
+    </form>
+      
+    </div>
+  </div>
+</div>
+<!-- Modal -->
