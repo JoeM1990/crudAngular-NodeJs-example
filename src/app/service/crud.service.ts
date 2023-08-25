@@ -8,7 +8,7 @@ import { Observable, finalize } from 'rxjs';
 })
 export class CrudService {
 
-  baseUrl="http://localhost:3000/api/"
+  baseUrl="http://localhost:8000/api/"
 
   constructor(public client:HttpClient) { }
 

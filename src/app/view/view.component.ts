@@ -36,7 +36,7 @@ export class ViewComponent implements OnInit {
     this.crud.getData()
     .subscribe(
       response => {
-        this.livre=response;
+        this.livre=response['data'];
        
       },
       error => {

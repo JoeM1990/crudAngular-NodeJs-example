@@ -28,8 +28,8 @@
                
                 
                 <td>
-                    <i class='bx bx-search-alt-2' data-bs-toggle="modal" data-bs-target="#updateModal" (click)="getLivreById(livres.id)">Update</i>
-                    <i class='bx bxs-trash primary' (click)="deleteLivreById(livres.id)">Delete</i>
+                    <button class='btn btn-primary' data-bs-toggle="modal" data-bs-target="#updateModal" (click)="getLivreById(livres.id)">Update</button> &nbsp;
+                    <button class='btn btn-danger' (click)="deleteLivreById(livres.id)">Delete</button>
                 </td>
         </tr>
         
@@ -63,7 +63,7 @@
         <div class="row">
           <div class="col mb-3">
             <label for="nameBasic" class="form-label">Auteur</label>
-            <input type="text" id="nameBasic" class="form-control" placeholder="Auteur" formControlName="autre"/>
+            <input type="text" id="nameBasic" class="form-control" placeholder="Auteur" formControlName="auteur"/>
           </div>
         </div>
         
